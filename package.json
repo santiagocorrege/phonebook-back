@@ -4,6 +4,8 @@
   "description": "none",
   "main": "index.js",
   "scripts": {
+    "build:ui": "rm -rf build && cd../phonebook && npm run build && cp -r build ../back-phonebook",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
     "start": "node index.js",
     "test": "\"echo jejo\"",
     "dev": "nodemon index.js"
